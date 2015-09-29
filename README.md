@@ -10,7 +10,7 @@ To install this extension in Keystone, you have to do the following:
 
 3. This extension implements an auth plugin. You need to add the `plugins/oauth2.py` module to the `keystone/auth/plugins` folder in your Keystone project.
 
-   > You can use the files inside the `config` folder to override your `etc/keystone.conf.sample` and `etc/keystone-paste.ini` files. They are a modified version of the default Keystone files that make this extension work. If you do so, **you can skip steps 4-6**. Should you prefer to set up everything your own, please read on.
+   > The files inside the `config` folder contain everything you need to **add** to your Keystone settings files (`etc/keystone.conf` and `etc/keystone-paste.ini`). If you are an experienced user, you can check those files and **skip steps 4-6**. Should you prefer to set up everything step by step, please read on.
 
 4. Since this extension is augmenting a pipeline (see [Keystone docs](http://docs.openstack.org/developer/keystone/extension_development.html#modifying-the-keystone-paste-ini-file) for more info), a corresponding `filter:` section is necessary to be introduced in your `etc/keystone-paste.ini` file. Just place the following:
    ```
