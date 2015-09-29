@@ -30,5 +30,3 @@ To install this extension in Keystone, you have to do the following:
    # The oauth2 plugin module (string value)
    oauth2=keystone.auth.plugins.oauth2.OAuth2
    ```
-
-> The files inside the `config` folder are an example of the settings 4-6.
