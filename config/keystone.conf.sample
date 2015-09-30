@@ -1,21 +1,7 @@
 [auth]
 
-#
-# Options defined in keystone
-#
-
 # Default auth methods. (list value)
 methods=external,password,token,oauth2
-
-# The password auth plugin module. (string value)
-#password=keystone.auth.plugins.password.Password
-
-# The token auth plugin module. (string value)
-#token=keystone.auth.plugins.token.Token
-
-# The external (REMOTE_USER) auth plugin module. (string
-# value)
-#external=keystone.auth.plugins.external.DefaultDomain
 
 # The oauth2 plugin module (string value)
 oauth2=keystone.auth.plugins.oauth2.OAuth2

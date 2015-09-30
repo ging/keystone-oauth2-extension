@@ -17,7 +17,7 @@ To install this extension in Keystone, you have to do the following:
    [filter:oauth2_extension]
    paste.filter_factory = keystone.contrib.oauth2.routers:OAuth2Extension.factory
    ``` 
-5. In order for the extension to work, it must be placed in the `pipeline`. This extension is recommended to be placed right instead of the default `oauth1_extension`.
+5. In order for the extension to work, it must be placed in the `pipeline`.
 
 6. Finally, edit the `[auth]` section in your `keystone.conf` file (the one placed in the `etc` folder in your Keystone project), to include OAuth 2.0 auth method, just like this:
    <pre>
