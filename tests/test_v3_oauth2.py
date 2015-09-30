@@ -28,6 +28,16 @@ CONF = config.CONF
 
 class OAuth2BaseTests(test_v3.RestfulTestCase):
 
+    def auth_plugin_config_override(self, methods=None, **method_classes):
+        super(OAuth2BaseTests, self).auth_plugin_config_override(
+            methods=['external', 'password', 'token', 'oauth1', 'saml2', 'oauth2'],
+            external='keystone.auth.plugins.external.DefaultDomain',
+            password='keystone.auth.plugins.password.Password',
+            token='keystone.auth.plugins.token.Token',
+            oauth1='keystone.auth.plugins.oauth1.OAuth',
+            saml2='keystone.auth.plugins.saml2.Saml2',
+            oauth2='keystone.auth.plugins.oauth2.OAuth2'
+        )
 
     EXTENSION_NAME = 'oauth2'
     EXTENSION_TO_ADD = 'oauth2_extension'
