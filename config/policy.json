@@ -3,7 +3,8 @@
     "identity:revoke_access_token": "rule:member_or_admin_or_owner",
     "identity:request_authorization_code": "rule:member_or_admin_or_owner",
 
-    //The following policies are also required, but should already be in your 'policy.json', since they are needed for OAuth1
+    // The following policies are also required, but should already be in your 'policy.json',
+    // since they are needed for OAuth1
 
     "identity:list_access_tokens": "rule:admin_required",
     "identity:get_access_token": "rule:admin_required",
