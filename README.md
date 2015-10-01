@@ -19,7 +19,7 @@ To install this extension in Keystone, you have to do the following:
    ``` 
 5. In order for the extension to work, it must be placed in the `pipeline`.
 
-6. Finally, edit the `[auth]` section in your `keystone.conf` file (the one placed in the `etc` folder in your Keystone project), to include OAuth 2.0 auth method, just like this:
+6. Edit the `[auth]` section in your `keystone.conf` file (the one placed in the `etc` folder in your Keystone project), to include OAuth 2.0 auth method, just like this:
    <pre>
    # Default auth methods. (list value)
    methods=external,password,token,<b>oauth2</b>
@@ -30,3 +30,11 @@ To install this extension in Keystone, you have to do the following:
    # The oauth2 plugin module (string value)
    oauth2=keystone.auth.plugins.oauth2.OAuth2
    ```
+
+7. Finally, you need to define new policies in your `policy.json` file (the one placed in the `etc` folder in your Keystone project) for the following targets: 
+   ```
+   identity:list_authorization_codes
+   identity:revoke_access_token
+   identity:request_authorization_code
+   ```
+The file `config/policy.json` contains default values you can use, as well as other required policies which Keystone should include by default.
