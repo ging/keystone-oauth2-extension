@@ -41,3 +41,7 @@ The file `config/policy.json` contains default values you can use, as well as ot
 
 8. Check Python dependencies. This extension uses [OAuthLib](https://oauthlib.readthedocs.org/en/latest/), tested to work with versions >=0.7.2, <=1.0.3. This is already a dependency in Keystone and you should not need to install it again, but if you are not using the standard Keystone installation, make sure to add it.
 
+9. Create database tables. Execute:
+`tools/with_venv.sh keystone-manage db_sync --extension oauth2`
+
+
