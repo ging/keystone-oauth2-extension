@@ -31,10 +31,13 @@ To install this extension in Keystone, you have to do the following:
    oauth2=keystone.auth.plugins.oauth2.OAuth2
    ```
 
-7. Finally, you need to define new policies in your `policy.json` file (the one placed in the `etc` folder in your Keystone project) for the following targets: 
+7. Define new policies in your `policy.json` file (the one placed in the `etc` folder in your Keystone project) for the following targets: 
    ```
    identity:list_authorization_codes
    identity:revoke_access_token
    identity:request_authorization_code
    ```
 The file `config/policy.json` contains default values you can use, as well as other required policies which Keystone should include by default.
+
+8. Check Python dependencies. This extension uses [OAuthLib](https://oauthlib.readthedocs.org/en/latest/), tested to work with versions >=0.7.2, <=1.0.3. This is already a dependency in Keystone and you should not need to install it again, but if you are not using the standard Keystone installation, make sure to add it.
+
